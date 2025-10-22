@@ -1,0 +1,84 @@
+{
+  "categories": [
+    { "slug": "technology", "label": "Technology", "order": 1, "description": "Latest tech news and innovations" },
+    { "slug": "business", "label": "Business", "order": 2, "description": "Business and finance updates" },
+    { "slug": "sports", "label": "Sports", "order": 3, "description": "Sports news and updates" },
+    { "slug": "entertainment", "label": "Entertainment", "order": 4, "description": "Entertainment and celebrity news" },
+    { "slug": "health", "label": "Health", "order": 5, "description": "Health and wellness news" },
+    { "slug": "politics", "label": "Politics", "order": 6, "description": "Political news and analysis" }
+  ],
+  "articles": [
+    {
+      "title": "Revolutionary AI Technology Transforms Healthcare Industry",
+      "category": "technology",
+      "previewText": "A groundbreaking AI system has been developed that can diagnose diseases with 99% accuracy, potentially revolutionizing medical diagnosis worldwide.",
+      "content": "In a major breakthrough for the healthcare industry, researchers have developed an artificial intelligence system that can diagnose diseases with unprecedented accuracy. The new AI technology, developed by a team of scientists at leading medical institutions, has shown remarkable results in early testing phases. The system uses advanced machine learning algorithms to analyze medical images, patient data, and symptoms to provide accurate diagnoses. In clinical trials, the AI achieved a 99% accuracy rate in identifying various diseases, including cancer, heart conditions, and neurological disorders.",
+      "isPublished": true,
+      "featureType": "trending",
+      "tags": ["AI", "Healthcare", "Technology", "Innovation"]
+    },
+    {
+      "title": "Global Stock Markets Reach Record Highs Amid Economic Recovery",
+      "category": "business",
+      "previewText": "Major stock indices around the world have surged to new all-time highs as investors show confidence in the ongoing economic recovery.",
+      "content": "Global stock markets have experienced a remarkable rally this week, with major indices reaching unprecedented levels. The Dow Jones Industrial Average, S&P 500, and NASDAQ all closed at record highs, reflecting growing investor confidence in the economic recovery. Analysts attribute this surge to several factors, including strong corporate earnings, positive economic indicators, and optimistic outlooks from central banks. The technology sector has been particularly strong, with many companies reporting better-than-expected quarterly results.",
+      "isPublished": true,
+      "featureType": "suggested",
+      "tags": ["Stocks", "Economy", "Finance", "Markets"]
+    },
+    {
+      "title": "Championship Finals Set for This Weekend",
+      "category": "sports",
+      "previewText": "The highly anticipated championship finals are scheduled for this weekend, with two top teams competing for the ultimate prize.",
+      "content": "After an intense season of competition, the championship finals are finally here. The two best teams in the league will face off this weekend in what promises to be an unforgettable match. Both teams have shown exceptional skill and determination throughout the season, making this final showdown highly anticipated by fans worldwide.",
+      "isPublished": true,
+      "featureType": "trending",
+      "tags": ["Sports", "Championship", "Finals"]
+    },
+    {
+      "title": "New Study Reveals Benefits of Regular Exercise",
+      "category": "health",
+      "previewText": "A comprehensive study shows that regular exercise can significantly improve both physical and mental health, with benefits lasting well into old age.",
+      "content": "A groundbreaking study published in the Journal of Health Sciences has revealed that regular exercise provides numerous long-term health benefits. The research, conducted over a 10-year period with over 50,000 participants, shows that even moderate physical activity can significantly improve quality of life. The study found that individuals who engaged in regular exercise had lower rates of chronic diseases, improved mental health, and increased longevity.",
+      "isPublished": true,
+      "featureType": "suggested",
+      "tags": ["Health", "Exercise", "Wellness", "Study"]
+    },
+    {
+      "title": "Major Political Summit Addresses Climate Change",
+      "category": "politics",
+      "previewText": "World leaders gather for a crucial summit to discuss climate change policies and set new environmental targets for the coming decade.",
+      "content": "Leaders from around the world have convened for a critical summit focused on addressing climate change. The three-day event aims to establish new environmental policies and set ambitious targets for reducing carbon emissions. The summit has brought together heads of state, environmental experts, and industry leaders to discuss comprehensive strategies for combating climate change.",
+      "isPublished": true,
+      "featureType": "trending",
+      "tags": ["Politics", "Climate", "Environment", "Summit"]
+    },
+    {
+      "title": "Blockchain Technology Revolutionizes Financial Services",
+      "category": "technology",
+      "previewText": "Financial institutions are rapidly adopting blockchain technology to improve security, transparency, and efficiency in their operations.",
+      "content": "The financial services industry is experiencing a major transformation as blockchain technology becomes increasingly integrated into banking and payment systems. Major banks and financial institutions are investing heavily in blockchain solutions to enhance security and reduce transaction costs. This technology promises to revolutionize how financial transactions are processed and recorded.",
+      "isPublished": true,
+      "featureType": "suggested",
+      "tags": ["Blockchain", "Finance", "Technology", "Banking"]
+    },
+    {
+      "title": "Entertainment Industry Embraces Virtual Reality",
+      "category": "entertainment",
+      "previewText": "Movie studios and game developers are increasingly incorporating VR technology to create immersive entertainment experiences.",
+      "content": "The entertainment industry is undergoing a digital revolution as virtual reality technology becomes more accessible and sophisticated. Major studios and game developers are investing heavily in VR content to provide audiences with unprecedented immersive experiences. This technology is changing how we consume entertainment and interact with digital content.",
+      "isPublished": true,
+      "featureType": "trending",
+      "tags": ["VR", "Entertainment", "Gaming", "Technology"]
+    },
+    {
+      "title": "Renewable Energy Investments Reach New Heights",
+      "category": "business",
+      "previewText": "Global investments in renewable energy have reached record levels as countries accelerate their transition to clean energy sources.",
+      "content": "The renewable energy sector is experiencing unprecedented growth as governments and corporations worldwide increase their investments in clean energy technologies. Solar and wind power projects are leading the charge, with new installations breaking records every quarter. This investment surge reflects a global commitment to sustainable energy solutions.",
+      "isPublished": true,
+      "featureType": "suggested",
+      "tags": ["Renewable Energy", "Sustainability", "Investment", "Clean Energy"]
+    }
+  ]
+}
