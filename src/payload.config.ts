@@ -40,7 +40,7 @@ export default buildConfig({
         media: true,
       },
       options: {
-        secret: process.env.UPLOADTHING_SECRET,
+        token: 'eyJhcGlLZXkiOiJza19saXZlXzI4ZjY4OThkZTkyYjYzZDQyNmI0N2VjNmMyZWFjNDM2NDU0YTA3ODVhMDFkODA2ZmQzZGU3NDJkZDgyNWE3OTIiLCJhcHBJZCI6IjdubnpzeWgwOHciLCJyZWdpb25zIjpbInNlYTEiXX0=',
         acl: 'public-read',
       },
     }),
