@@ -1,7 +1,6 @@
 import { headers as getHeaders } from 'next/headers.js'
 import { getPayload } from 'payload'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import { Metadata } from 'next'
 
 import config from '@/payload.config'
@@ -220,11 +219,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
               {article.featuredImage && (
                 <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
-                  <Image
+                  <img
                     src={getImageUrl()}
                     alt={typeof article.featuredImage === 'object' ? article.featuredImage.alt || article.title : article.title}
-                    width={800}
-                    height={400}
                     className="w-full h-auto"
                   />
                 </div>

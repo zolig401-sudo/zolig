@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import type { Article, Media } from '@/payload-types'
 
 interface ArticleCardProps {
@@ -42,12 +41,11 @@ export default function ArticleCard({ article, featuredImage, variant = 'default
       <Link href={`/article/${article.slug}`} className="block h-full">
         {variant === 'small' ? (
           <div className="flex space-x-4">
-            <div className="relative w-24 h-24 flex-shrink-0">
-              <Image
+            <div className="w-24 h-24 flex-shrink-0">
+              <img
                 src={getImageUrl()}
                 alt={featuredImage?.alt || article.title}
-                fill
-                className="object-cover rounded"
+                className="w-full h-full object-cover rounded"
               />
             </div>
             <div className="flex-1 min-w-0">
@@ -60,12 +58,11 @@ export default function ArticleCard({ article, featuredImage, variant = 'default
           </div>
         ) : variant === 'vertical' ? (
           <div className="flex space-x-6">
-            <div className="relative w-48 h-32 flex-shrink-0">
-              <Image
+            <div className="w-48 h-32 flex-shrink-0">
+              <img
                 src={getImageUrl()}
                 alt={featuredImage?.alt || article.title}
-                fill
-                className="object-cover rounded"
+                className="w-full h-full object-cover rounded"
               />
             </div>
             <div className="flex-1 min-w-0">
@@ -87,12 +84,11 @@ export default function ArticleCard({ article, featuredImage, variant = 'default
           </div>
         ) : (
           <>
-            <div className="relative h-48">
-              <Image
+            <div className="h-48">
+              <img
                 src={getImageUrl()}
                 alt={featuredImage?.alt || article.title}
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="p-6">
