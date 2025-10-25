@@ -200,26 +200,26 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <Header />
       <CategoryNav categories={categories} />
       
-      <main className="py-8">
+      <main className="py-4 sm:py-6 lg:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Main article content */}
-            <article className="lg:col-span-3 bg-white rounded-lg shadow-md p-8">
-              <header className="mb-8 pb-6 border-b border-gray-200">
-                <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
-                  <span className="bg-red-500 text-white px-3 py-1 rounded-full font-medium">
+            <article className="lg:col-span-3 bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
+              <header className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-gray-200">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-3 sm:mb-4 text-xs sm:text-sm text-gray-500">
+                  <span className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full font-medium">
                     {typeof article.category === 'object' ? article.category.label : 'Ангилалгүй'}
                   </span>
                   <time className="font-medium">
                     {formatDate(article.publishedAt || article.createdAt)}
                   </time>
                 </div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">{article.title}</h1>
-                <p className="text-xl text-gray-600 leading-relaxed">{article.previewText}</p>
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">{article.title}</h1>
+                <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">{article.previewText}</p>
               </header>
 
               {article.featuredImage && (
-                <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
+                <div className="mb-6 sm:mb-8 rounded-lg overflow-hidden shadow-lg">
                   <img
                     src={getImageUrl()}
                     alt={typeof article.featuredImage === 'object' ? article.featuredImage.alt || article.title : article.title}
@@ -228,16 +228,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 </div>
               )}
 
-              <div className="prose prose-lg max-w-none">
+              <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
                 {renderRichText(article.content)}
               </div>
 
               {article.tags && article.tags.length > 0 && (
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Шошго:</h4>
+                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Шошго:</h4>
                   <div className="flex flex-wrap gap-2">
                     {article.tags.map((tag, index) => (
-                      <span key={index} className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
+                      <span key={index} className="bg-red-100 text-red-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
                         {tag.tag}
                       </span>
                     ))}
@@ -246,7 +246,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               )}
 
               {/* Social Sharing */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
+              <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
                 <SocialShare
                   title={article.title}
                   url={`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/article/${article.slug}`}

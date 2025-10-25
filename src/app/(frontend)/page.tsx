@@ -61,13 +61,13 @@ export default async function HomePage() {
       <Header />
       <CategoryNav categories={categories} />
       
-      <main className="py-8">
+      <main className="py-4 sm:py-6 lg:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
             {/* Main content area */}
-            <div className="lg:col-span-3">
-              <section className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Шинэ</h2>
+            <div className="lg:col-span-3 order-1">
+              <section className="mb-6 sm:mb-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Шинэ</h2>
                 <InfiniteScroll
                   initialArticles={initialArticles.articles}
                   featuredImages={featuredImages}
@@ -76,11 +76,11 @@ export default async function HomePage() {
             </div>
 
             {/* Sidebar */}
-            <aside className="lg:col-span-2 space-y-8">
+            <aside className="lg:col-span-2 space-y-6 sm:space-y-8 order-2">
               {/* Suggested Articles */}
               <section className="">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Санал болгох</h3>
-                <div className="space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Санал болгох</h3>
+                <div className="space-y-3 sm:space-y-4">
                   {suggestedArticles.map((article) => (
                     <ArticleCard
                       key={article.id}
@@ -94,8 +94,8 @@ export default async function HomePage() {
 
               {/* Trending Articles */}
               <section className="">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Эрэлттэй</h3>
-                <div className="space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Эрэлттэй</h3>
+                <div className="space-y-3 sm:space-y-4">
                   {trendingArticles.map((article) => (
                     <ArticleCard
                       key={article.id}
