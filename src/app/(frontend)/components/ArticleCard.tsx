@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import type { Article, Media } from '@/payload-types'
 import { getUploadThingUrl } from '@/lib/uploadthing'
@@ -11,24 +12,37 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({ article, featuredImage, variant = 'default' }: ArticleCardProps) {
+  const [imageUrl, setImageUrl] = useState('/placeholder-news.svg')
+
+  useEffect(() => {
+    // Generate URL on client side only to avoid hydration mismatch
+    const url = (() => {
+      // First try the featuredImage prop
+      if (featuredImage?._key) {
+        const generatedUrl = getUploadThingUrl(featuredImage._key)
+        console.log('Using featuredImage._key:', featuredImage._key, 'URL:', generatedUrl)
+        return generatedUrl
+      }
+      
+      // If no prop, try to get image from article.featuredImage directly
+      if (article.featuredImage && typeof article.featuredImage === 'object' && article.featuredImage._key) {
+        const generatedUrl = getUploadThingUrl(article.featuredImage._key)
+        console.log('Using article.featuredImage._key:', article.featuredImage._key, 'URL:', generatedUrl)
+        return generatedUrl
+      }
+      
+      console.log('No image found, using placeholder')
+      return '/placeholder-news.svg'
+    })()
+    setImageUrl(url)
+  }, [featuredImage, article.featuredImage])
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
     const year = date.getFullYear()
     const month = date.getMonth() + 1
     const day = date.getDate()
     return `${year} оны ${month} сарын ${day}`
-  }
-
-  const getImageUrl = () => {
-    // First try the featuredImage prop
-    if (featuredImage?._key) return getUploadThingUrl(featuredImage._key)
-    
-    // If no prop, try to get image from article.featuredImage directly
-    if (article.featuredImage && typeof article.featuredImage === 'object' && article.featuredImage._key) {
-      return getUploadThingUrl(article.featuredImage._key)
-    }
-    
-    return '/placeholder-news.svg'
   }
 
   const getCardClasses = () => {
@@ -46,7 +60,7 @@ export default function ArticleCard({ article, featuredImage, variant = 'default
           <div className="flex space-x-4">
             <div className="w-24 h-24 flex-shrink-0">
               <img
-                src={getImageUrl()}
+                src={imageUrl}
                 alt={featuredImage?.alt || article.title}
                 className="w-full h-full object-cover rounded"
               />
@@ -63,7 +77,7 @@ export default function ArticleCard({ article, featuredImage, variant = 'default
           <div className="flex space-x-6">
             <div className="w-48 h-32 flex-shrink-0">
               <img
-                src={getImageUrl()}
+                src={imageUrl}
                 alt={featuredImage?.alt || article.title}
                 className="w-full h-full object-cover rounded"
               />
@@ -89,7 +103,7 @@ export default function ArticleCard({ article, featuredImage, variant = 'default
           <>
             <div className="h-48">
               <img
-                src={getImageUrl()}
+                src={imageUrl}
                 alt={featuredImage?.alt || article.title}
                 className="w-full h-full object-cover"
               />
