@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import type { Article, Media } from '@/payload-types'
+import { getUploadThingUrl } from '@/lib/uploadthing'
 
 interface ArticleCardProps {
   article: Article
@@ -18,11 +21,11 @@ export default function ArticleCard({ article, featuredImage, variant = 'default
 
   const getImageUrl = () => {
     // First try the featuredImage prop
-    if (featuredImage?.url) return featuredImage.url
+    if (featuredImage?._key) return getUploadThingUrl(featuredImage._key)
     
     // If no prop, try to get image from article.featuredImage directly
-    if (article.featuredImage && typeof article.featuredImage === 'object' && article.featuredImage.url) {
-      return article.featuredImage.url
+    if (article.featuredImage && typeof article.featuredImage === 'object' && article.featuredImage._key) {
+      return getUploadThingUrl(article.featuredImage._key)
     }
     
     return '/placeholder-news.svg'

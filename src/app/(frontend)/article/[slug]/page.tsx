@@ -10,6 +10,7 @@ import ArticleSidebar from '../../components/ArticleSidebar'
 import SocialShare from '../../components/SocialShare'
 import { getCategories, getLatestArticles } from '../../actions/articles'
 import type { Article, Category, Media } from '@/payload-types'
+import { getUploadThingUrl } from '@/lib/uploadthing'
 
 async function getArticle(slug: string) {
   const payloadConfig = await config
@@ -50,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const getImageUrl = () => {
     if (article.featuredImage && typeof article.featuredImage === 'object') {
-      return article.featuredImage.url || '/placeholder-news.svg'
+      return getUploadThingUrl(article.featuredImage._key) || '/placeholder-news.svg'
     }
     return '/placeholder-news.svg'
   }
@@ -58,7 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
   const articleUrl = `${siteUrl}/article/${article.slug}`
   const imageUrl = article.featuredImage && typeof article.featuredImage === 'object' 
-    ? article.featuredImage.url 
+    ? getUploadThingUrl(article.featuredImage._key)
     : `${siteUrl}/placeholder-news.svg`
 
   return {
@@ -189,7 +190,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const getImageUrl = () => {
     if (article.featuredImage && typeof article.featuredImage === 'object') {
-      return article.featuredImage.url || '/placeholder-news.svg'
+      return getUploadThingUrl(article.featuredImage._key) || '/placeholder-news.svg'
     }
     return '/placeholder-news.svg'
   }
