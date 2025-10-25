@@ -19,19 +19,14 @@ export default function ArticleCard({ article, featuredImage, variant = 'default
     const url = (() => {
       // First try the featuredImage prop
       if (featuredImage?._key) {
-        const generatedUrl = getUploadThingUrl(featuredImage._key)
-        console.log('Using featuredImage._key:', featuredImage._key, 'URL:', generatedUrl)
-        return generatedUrl
+        return getUploadThingUrl(featuredImage._key)
       }
       
       // If no prop, try to get image from article.featuredImage directly
       if (article.featuredImage && typeof article.featuredImage === 'object' && article.featuredImage._key) {
-        const generatedUrl = getUploadThingUrl(article.featuredImage._key)
-        console.log('Using article.featuredImage._key:', article.featuredImage._key, 'URL:', generatedUrl)
-        return generatedUrl
+        return getUploadThingUrl(article.featuredImage._key)
       }
       
-      console.log('No image found, using placeholder')
       return '/placeholder-news.svg'
     })()
     setImageUrl(url)
