@@ -1,0 +1,1 @@
+export const UPLOADTHING_APP_ID = '7nnzsyh08w'

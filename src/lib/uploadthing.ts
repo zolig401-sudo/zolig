@@ -1,3 +1,5 @@
+import { UPLOADTHING_APP_ID } from '../constants'
+
 /**
  * Generate UploadThing file URL
  * Format: https://<APP_ID>.ufs.sh/f/<FILE_KEY>
@@ -8,13 +10,13 @@ export function getUploadThingUrl(fileKey: string | null | undefined): string {
     return '/placeholder-news.svg'
   }
 
-  // Use NEXT_PUBLIC prefix for client-side access
-  const appId = process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID || process.env.UPLOADTHING_APP_ID
+  // Use NEXT_PUBLIC prefix for client-side access NEXT_PUBLIC_UPLOADTHING_APP_ID
+  const appId = UPLOADTHING_APP_ID
   
   console.log('getUploadThingUrl:', { fileKey, appId })
   
   if (!appId) {
-    console.warn('UPLOADTHING_APP_ID is not set')
+    console.warn('UPLOADTHING_APP_ID is not set', { appId })
     return '/placeholder-news.svg'
   }
 
