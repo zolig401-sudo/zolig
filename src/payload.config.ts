@@ -40,7 +40,7 @@ export default buildConfig({
         media: true,
       },
       options: {
-        token: process.env.UPLOADTHING_TOKEN,
+        secret: process.env.UPLOADTHING_SECRET,
         acl: 'public-read',
       },
     }),
